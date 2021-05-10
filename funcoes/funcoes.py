@@ -66,3 +66,11 @@ def empilha(baralho, origem, destino):
     x = baralho.index(baralho[origem], destino+1)
     baralho.pop(x)
     return baralho
+
+def possui_movimentos_possiveis(baralho):
+    i = 0
+    while i < len(baralho):
+        if lista_movimentos_possiveis(baralho, i) != []:
+            return True
+        i += 1
+    return False
