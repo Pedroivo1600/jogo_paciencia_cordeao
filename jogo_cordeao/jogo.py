@@ -30,7 +30,15 @@ while continua:
     random.shuffle(baralho)
     while possui_movimentos_possiveis(baralho):
         for carta in baralho:
-            print('{}. {}'.format(baralho.index(carta)+1, carta))
+            if extrai_naipe(carta) == '♠':
+                carta2 = BLUE+carta+RESET
+            if extrai_naipe(carta) == '♥':
+                carta2 = RED+carta+RESET
+            if extrai_naipe(carta) == '♦':
+                carta2 = GREEN+carta+RESET
+            if extrai_naipe(carta) == '♣':
+                carta2 = CYAN+carta+RESET
+            print('{}. {}'.format(baralho.index(carta)+1, carta2))
         q = int(input('Digite o número da carta que você escolheu entre 1 e {}:'.format(i)))
         if q <= i:
             if lista_movimentos_possiveis(baralho, q-1)!=[]:
