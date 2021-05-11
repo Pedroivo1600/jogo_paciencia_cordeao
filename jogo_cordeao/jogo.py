@@ -15,6 +15,8 @@ print('\nPara que um movimento possa ser realizado basta que uma das duas condi�
 print('1. As duas cartas possuem o mesmo valor ou') 
 print('2. As duas cartas possuem o mesmo naipe.\n') 
 
+input('\n Pressione [ENTER] para inciar')
+
 #JOGO
 
 
@@ -35,23 +37,23 @@ while continua:
                 if lista_movimentos_possiveis(baralho, q-1) == [3]:
                     empilha(baralho, q-1, q-4)
                     i-=1   
-                if lista_movimentos_possiveis(baralho, q-1) == [1]:
+                elif lista_movimentos_possiveis(baralho, q-1) == [1]:
                     empilha(baralho, q-1, q-2)
                     i-=1
-                if lista_movimentos_possiveis(baralho, q-1) == [1, 3]:
-                    t =True
+                elif lista_movimentos_possiveis(baralho, q-1) == [1, 3]:
+                    t = True
                     while t:
                         q2 = int(input('Sobre qual carta você quer empilhar o {}?: \n 1.{} \n 2.{}\n'.format(baralho[q-1], baralho[q-2], baralho[q-4])))
                         if q2 == 1:
                             empilha(baralho, q-1, q-2)
                             i-=1
                             t = False
-                        if q2 == 2:
+                        elif q2 == 2:
                             empilha(baralho, q-1, q-4)
                             i-=1
                             t = False
                         else:
-                            print('Escolha 1 ou 2')
+                            print('Escolha 1 ou 2!')
                             t = True
             else:
                 print('A carta {} não pode ser empilhada!'.format(baralho[q-1]))
