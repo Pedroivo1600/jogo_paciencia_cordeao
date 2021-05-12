@@ -83,4 +83,6 @@ RESET = "\033[0;0m"
 BOLD    = "\033[;1m"
 REVERSE = "\033[;7m"
 
+#https://raccoon.ninja/pt/dev-pt/utilizando-cores-para-escrever-no-terminal-python/
+
 # print(BLUE+'oi' + RESET)
